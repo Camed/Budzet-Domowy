@@ -1,0 +1,58 @@
+﻿@page
+@model Budżet_Domowy.Pages.Deletions.DeleteBudgetPartModel
+
+@{
+    ViewData["Title"] = "DeleteBudgetPart";
+}
+
+<h1>DeleteBudgetPart</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BudgetPart</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BudgetPart.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BudgetPart.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BudgetPart.CreationTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BudgetPart.CreationTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BudgetPart.DesiredTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BudgetPart.DesiredTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BudgetPart.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BudgetPart.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BudgetPart.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BudgetPart.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BudgetPart.IsFinished)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BudgetPart.IsFinished)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="BudgetPart.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

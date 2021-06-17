@@ -1,0 +1,35 @@
+﻿@page
+@model Budżet_Domowy.Pages.Creates.CreateBudgetModel
+
+@{
+    ViewData["Title"] = "CreateBudget";
+}
+
+<div class="text-center">
+    <h1>Create Budget</h1>
+</div>
+
+<h4>Budget</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Budget.Name" class="control-label"></label>
+                <input asp-for="Budget.Name" class="form-control" />
+                <label asp-for="Budget.isShared" class="control-label"></label>
+                <input asp-for="Budget.isShared" class="form-control" type="checkbox" />
+                <span asp-validation-for="Budget.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

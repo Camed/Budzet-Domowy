@@ -1,0 +1,30 @@
+﻿@page
+@using Microsoft.AspNet.Identity;
+@model Budżet_Domowy.Pages.ListBudgetsModel
+@{
+    ViewData["Title"] = "List of your budgets";
+}
+
+<div class="text-center"><h1>Budget list!</h1></div>
+
+
+<p>
+    <a asp-page="./Creates/CreateBudget">Create new budget</a>
+</p>
+
+<div class="card-columns">
+    @foreach (var item in Model.Budget)
+    {
+        if (item.OwnerId == User.Identity.GetUserId() || item.isShared)
+        {
+            <div class="card">
+                <div class="card-body" style="background-color: #EAE7DC">
+                    <h5 class="card-title">@item.Name</h5>
+                    <h6 class="card-body">Created: @item.CreationTime</h6>
+                    <a asp-page="./BudgetDetails" asp-route-id="@item.Id"><h6 class="card-footer">Show details</h6></a>
+                </div>
+            </div>
+        }
+    }
+</div>
+

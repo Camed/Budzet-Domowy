@@ -1,0 +1,56 @@
+﻿@page
+@model Budżet_Domowy.Pages.Creates.CreateBudgetPartModel
+
+@{
+    ViewData["Title"] = "CreateBudgetPart";
+}
+
+<h1>CreateBudgetPart</h1>
+@Model.b.Id;
+<h4>BudgetPart</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="veryimportantvalue" type="hidden" />
+                <label asp-for="BudgetPart.Type" class="control-label"></label>
+                <select asp-for="BudgetPart.Type" class="form-control">
+                    <option value="1">Savings</option>
+                    <option value="2">Expenditure</option>
+                    <option value="3">Plan</option>
+                </select>
+                <span asp-validation-for="BudgetPart.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BudgetPart.DesiredTime" class="control-label"></label>
+                <input asp-for="BudgetPart.DesiredTime" class="form-control" />
+                <span asp-validation-for="BudgetPart.DesiredTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BudgetPart.Name" class="control-label"></label>
+                <input asp-for="BudgetPart.Name" class="form-control" />
+                <span asp-validation-for="BudgetPart.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BudgetPart.Amount" class="control-label"></label>
+                <input asp-for="BudgetPart.Amount" class="form-control" />
+                <span asp-validation-for="BudgetPart.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BudgetPart.IsFinished" class="control-label"></label>
+                <input asp-for="BudgetPart.IsFinished" type="checkbox" class="form-control" />
+                <span asp-validation-for="BudgetPart.IsFinished" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
